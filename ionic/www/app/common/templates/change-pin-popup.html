@@ -1,0 +1,4 @@
+<label>Old pin code:</label><input type="password" ng-model="pinSetting.pinCodeOld" ng-change="pinSetting.pinIncorrect=false">
+<label>New pin code:</label><input type="password" ng-model="pinSetting.pinCodeNew">
+<p>It will remove the pin code protection if leave the new pin code empty</p>
+<p ng-show="pinSetting.pinIncorrect" class="assertive">Incorrect old pin code</p>

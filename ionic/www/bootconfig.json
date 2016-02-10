@@ -1,0 +1,13 @@
+{
+    "remoteAccessConsumerKey": "3MVG91ftikjGaMd8N0ghDU6FPIenz8JX0z3SQwW47ScwY9cJAZfMnNLxQmRS_t4shwilTcwp7kYsK6AuYB35m",
+    "oauthRedirectURI": "testsfdc:///mobilesdk/detect/oauth/done",
+    "oauthScopes": [
+        "web",
+        "api"
+    ],
+    "isLocal": true,
+    "startPage": "index.html",
+    "errorPage": "error.html",
+    "shouldAuthenticate": true,
+    "attemptOfflineLoad": false
+}

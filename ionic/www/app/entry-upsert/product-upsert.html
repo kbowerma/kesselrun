@@ -1,0 +1,24 @@
+<ion-view title="{{id?'Edit':'Create'}}">
+
+    <ion-nav-buttons side="right">
+        <label for="submit-form"><button class="button button-clear">Save</button></label>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <form class="list card" name="form" ng-submit="save(form)">
+            <label class="item item-input">
+                <span class="input-label" ng-class="{'assertive':showError&&form.name.$invalid}">Name</span>
+                <input type="text" ng-model="entry.Name" required name="name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Description</span>
+                <input type="text" ng-model="entry.Description__c">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Sku</span>
+                <input type="text" ng-model="entry.Sku__c">
+            </label>         
+            <input type="submit" id="submit-form" ng-show="false">
+        </form>
+    </ion-content>
+</ion-view>

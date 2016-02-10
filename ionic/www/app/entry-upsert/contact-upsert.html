@@ -1,0 +1,41 @@
+<ion-view title="{{id?'Edit':'Create'}}">
+
+    <ion-nav-buttons side="right">
+        <label for="submit-form"><button class="button button-clear">Save</button></label>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <form class="list card" name="form" ng-submit="save(form)">
+            <label class="item item-input">
+                <span class="input-label" ng-class="{'assertive':showError&&form.firstName.$invalid}">First Name</span>
+                <input type="text" name="firstName" ng-model="entry.FirstName" required>
+            </label>
+            <label class="item item-input">
+                <span class="input-label" ng-class="{'assertive':showError&&form.lastName.$invalid}">Last Name</span>
+                <input type="text" name="lastName" ng-model="entry.LastName" required>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Title</span>
+                <input type="text" ng-model="entry.Title">
+            </label>
+            <label class="item item-input">
+                <span class="input-label" ng-class="{'assertive':showError&&form.phone.$invalid}">Mobile phone</span>
+                <input type="text" name="phone" ng-model="entry.Phone" ng-pattern="/^[()\+\-0-9]+$/">
+            </label>
+            <label class="item item-input">
+                <span class="input-label" ng-class="{'assertive':showError&&form.email.$invalid}">Email</span>
+                <input type="email" name="email" ng-model="entry.Email">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Department</span>
+                <input type="text" ng-model="entry.Department">
+            </label>
+            <label class="item item-input">
+                <span class="input-label" ng-class="{'assertive':showError&&form.homePhone.$invalid}">Home phone</span>
+                <input type="text" name="homePhone" ng-model="entry.HomePhone" ng-pattern="/^[()\+\-0-9]+$/">
+            </label>
+            <input type="submit" id="submit-form" ng-show="false">        
+        </form>
+    </ion-content>
+
+</ion-view>

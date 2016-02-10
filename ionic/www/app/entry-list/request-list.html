@@ -1,0 +1,37 @@
+<ion-view class="{{entityName}}" title="{{pageTitle}}">
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <a class="button button-icon icon ion-android-sync" href="javascript:;" ng-click="sync()"></a>
+
+        <a class="button button-icon icon ion-plus-round" href="#/app/{{entryName}}-upsert/"></a>
+    </ion-nav-buttons>
+    <div class="bar bar-subheader item item-input-inset item-icon-left item-icon-right">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="searchText" class="search-input">
+        <i class="icon ion-close-round placeholder-icon" ng-show="searchText" ng-click="searchText=''"></i>
+    </div>
+    <ion-content class="has-subheader">
+        <div class="list">
+            <a class="item" ng-repeat="entry in entries | filter: searchText" href="#/app/{{entryName}}-view/{{entry._soupEntryId}}">
+                <div class="row">
+                    <div class="col col-75">
+                        <h2>{{entry.__locally_created__ ? "Please sync" : entry.Name}}</h2>
+                        <p>{{'Contact: ' + entry.Contact__r.Name}}</p>
+                        <p>{{'Product: ' + entry.Product__r.Name}}</p>
+                    </div>    
+                    <div class="col padding-vertical indicate-icons">
+                        <i class="icon ion-plus-round balanced" ng-show="entry.__locally_created__"></i>
+                        <i class="icon ion-ios-trash assertive" ng-show="entry.__locally_deleted__"></i>
+                        <i class="icon ion-ios-compose positive" ng-show="entry.__locally_updated__"></i>
+                        <i class="icon ion-chevron-right"></i>                    
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+
+</ion-view>

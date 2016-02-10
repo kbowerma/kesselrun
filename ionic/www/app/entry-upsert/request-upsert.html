@@ -1,0 +1,36 @@
+<ion-view title="{{id?'Edit':'Create'}}">
+
+    <ion-nav-buttons side="right">
+        <label for="submit-form"><button class="button button-clear">Save</button></label>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <form class="list card" name="form" ng-submit="save(form)">
+            <label class="item item-input" ng-show="entry.Name">
+                <span class="input-label">Name</span>
+                <p>{{entry.Name}}</p>
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">Contact</span>
+                <select ng-model="newRequest.selectedContact" ng-options="contact.Name for contact in contacts track by contact.Id"></select>
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">Product</span>
+                <select ng-model="newRequest.selectedProduct" ng-options="product.Name for product in products track by product.Id"></select>
+            </label>
+            <label class="item item-input">
+                <span class="input-label" ng-class="{'assertive':showError&&form.quantity.$invalid}">Quantity</span>
+                <input type="number" ng-model="entry.Quantity__c" ng-pattern="/^[1-9]\d*$/" name="quantity">
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">Status</span>
+                <select ng-model="entry.Status__c" ng-options="requestStatus for requestStatus in requestStatuses"></select>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Delivery Date</span>
+                <input type="date" ng-model="newRequest.deliveryDate">
+            </label>       
+            <input type="submit" id="submit-form" ng-show="false">
+        </form>
+    </ion-content>
+</ion-view>

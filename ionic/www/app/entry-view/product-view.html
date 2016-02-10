@@ -1,0 +1,24 @@
+<ion-view title="{{pageTitle}}">
+
+    <ion-nav-buttons side="right">
+        <a class="button button-icon icon ion-ios-trash" href="javascript:;" ng-click="delete(_soupEntryId)"></a>
+        <a class="button button-icon icon ion-ios-compose" href="#/app/{{entryName}}-upsert/{{entry._soupEntryId}}"></a>        
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <div class="list card">
+            <div class="item">
+                <h2>Name</h2>
+                <p>{{entry.Name}}</p>
+            </div>
+            <div class="item">
+                <h2>Description</h2>
+                <p>{{entry.Description__c}}</p>
+            </div>
+            <div class="item">
+                <h2>Sku</h2>
+                <p>{{entry.Sku__c}}</p>
+            </div>          
+        </div>
+    </ion-content>
+</ion-view>

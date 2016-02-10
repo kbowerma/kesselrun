@@ -1,0 +1,4 @@
+<label>Pin code:</label><input type="password" ng-model="pinSetting.pinCodeInputFirst" ng-change="pinSetting.pinNotConsistent=false;pinSetting.pinRequired=false">
+<label> Confirm:</label><input type="password" ng-model="pinSetting.pinCodeInputSecond" ng-change="pinSetting.pinNotConsistent=false">
+<p ng-show="pinSetting.pinNotConsistent" class="assertive">The pin codes should be consistent</p>
+<p ng-show="pinSetting.pinRequired" class="assertive">Please input a non-empty pin code</p>
