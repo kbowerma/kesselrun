@@ -42,6 +42,7 @@ For more information, check out [Salesforce Mobile SDK Development Guide](https:
 
 Tried:
 ```
-ionic plugin add https://github.com/forcedotcom/SalesforceMobileSDK-CordovaPlugin.git```
+ionic plugin add https://github.com/forcedotcom/SalesforceMobileSDK-CordovaPlugin.git
+```
 
 This worked
