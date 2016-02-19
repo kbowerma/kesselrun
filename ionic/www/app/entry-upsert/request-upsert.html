@@ -20,7 +20,7 @@
             </label>
             <label class="item item-input">
                 <span class="input-label" ng-class="{'assertive':showError&&form.quantity.$invalid}">Quantity</span>
-                <input type="number" ng-model="entry.Quantity__c" ng-pattern="/^[1-9]\d*$/" name="quantity">
+                <input type="number" ng-model="entry.Quantity__c" ng-pattern="/^[1-9]\d*$/" name="quantity" min="1" max="100" required>
             </label>
             <label class="item item-input item-select">
                 <span class="input-label">Status</span>
@@ -29,7 +29,7 @@
             <label class="item item-input">
                 <span class="input-label">Delivery Date</span>
                 <input type="date" ng-model="newRequest.deliveryDate">
-            </label>       
+            </label>
             <input type="submit" id="submit-form" ng-show="false">
         </form>
     </ion-content>

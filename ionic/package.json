@@ -4,32 +4,50 @@
   "description": "SFDC Offline Poc",
   "dependencies": {
     "gulp": "^3.5.6",
-    "gulp-sass": "^2.0.4",
     "gulp-concat": "^2.2.0",
     "gulp-minify-css": "^0.3.0",
-    "gulp-rename": "^1.2.0"
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4",
+    "shelljs": "^0.5.3"
   },
   "devDependencies": {
     "bower": "^1.3.3",
-    "gulp-util": "^2.2.14",
-    "shelljs": "^0.3.0"
+    "gulp-util": "^2.2.14"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device@1.1.1",
-    "cordova-plugin-console@1.0.2",
-    "cordova-plugin-whitelist@1.2.0",
-    "cordova-plugin-splashscreen@3.1.0",
-    "cordova-plugin-statusbar@2.1.0",
-    "ionic-plugin-keyboard@1.0.8",
-    "cordova-plugin-network-information@1.2.0",
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-screen-orientation",
+    "cordova-plugin-network-information",
     {
-      "locator": "https://github.com/forcedotcom/SalesforceMobileSDK-CordovaPlugin#83404e43b761b8bf9d59ac5337df5d0f53a61be4",
+      "locator": "https://github.com/coderReview/phonegap-plugin-push.git",
+      "id": "phonegap-plugin-push"
+    },
+    {
+      "locator": "https://github.com/coderReview/SalesforceMobileSDK-CordovaPlugin.git",
       "id": "com.salesforce"
     },
-    "cordova-plugin-screen-orientation@1.4.0"
+    {
+      "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-x-toast"
+    }
   ],
   "cordovaPlatforms": [
     "ios@3.9.2",
-    "android@5.0.0"
+    "android@5.0.0",
+    {
+      "platform": "android",
+      "version": "",
+      "locator": "android"
+    },
+    {
+      "platform": "ios",
+      "version": "",
+      "locator": "ios"
+    }
   ]
 }
