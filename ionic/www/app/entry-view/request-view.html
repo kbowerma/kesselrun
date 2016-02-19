@@ -2,7 +2,7 @@
 
     <ion-nav-buttons side="right">
         <a class="button button-icon icon ion-ios-trash" href="javascript:;" ng-click="delete(_soupEntryId)"></a>
-        <a class="button button-icon icon ion-ios-compose" href="#/app/{{entryName}}-upsert/{{entry._soupEntryId}}"></a>        
+        <a class="button button-icon icon ion-ios-compose" href="#/app/{{entryName}}-upsert/{{entry._soupEntryId}}"></a>
     </ion-nav-buttons>
 
     <ion-content class="has-header">
@@ -29,12 +29,19 @@
             </div>
             <div class="item">
                 <h2>Delivery Date</h2>
-                <p>{{entry.Delivery_Date__c | date:'MMM d, y'}}</p>
+                <p>{{entry.Delivery_Date__c | parseDate | date:'MMM d, y'}}</p>
             </div>
             <div class="item">
                 <h2>Authorized Users</h2>
                 <p>{{entry.Authorized_Users__r | userNamesFilter}}</p>
-            </div>                                                            
+            </div>
+        </div>
+        <div class="signatureDiv" ng-show="showSignature">
+            <h3>Please sign here:</h3>
+            <canvas id="signatureCanvas" height="200" width="768"></canvas>
+            <button class="button button-outline button-assertive" ng-click="clearCanvas()">Clear</button>
+            <button class="button button-outline button-dark" ng-click="previewFile()">Preview</button>
+            <button class="button button-outline button-positive" ng-click="saveSignature()">Confirm</button>
         </div>
     </ion-content>
 </ion-view>
